@@ -10,7 +10,7 @@ body {
 	background-color: #8c8c8c;
 }
 
-li,a,button{
+.navlink,a,.contactbtn{
 	font-family: "Roboto", sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -35,20 +35,20 @@ header{
 	cursor: pointer;
 }
 
-.nav_links li {
+.nav_links .navlink {
 	display: inline-block;
 	padding: 0px 20px;
 }
 
-.nav_links li a {
+.nav_links .navlink a {
 	transition: all 0.3s ease 0s;
 }
 
-.nav_links li a:hover {
+.nav_links .navlink a:hover {
 	color: #0088a9;
 }
 
-button {
+.contactbtn {
 	padding: 9px 25px;
 	background-color: rgba(0,136,169,1);
 	border: none;
@@ -57,6 +57,6 @@ button {
 	transition: all 0.3s ease 0s;
 }
 
-button:hover {
+.contactbtn:hover {
 	background-color: rgba(0,136,169,0.8);
 }
