@@ -9,4 +9,15 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+
+  const checkoutButton = document.getElementById('checkout-button')
+  const createStripeCheckout = firebase.functions().httpsCallable('createStripeCheckout')
+  const stripe = Stripe('pk_test_51J2Fp4DpF8CPXQ9GUCuTZvIp7heGjnmtyri4JEChEabWQIWDpNzSvjscvQkrUhx7jY43bBD3sCWGb8dCMNFyj0fd00uYoBTydd')
+
+  checkoutButton.addEventListener('click', () => {
+    createStripeCheckout()
+      .then(response => {
+        const sessionId = response.data.id
+        stripe.redirectToCheckout({ sessionId: sessionId})
+      })
+  })
